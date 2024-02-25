@@ -1,9 +1,4 @@
-// console.log("EXECUTED");
-
-// import moment from 'moment';
-// const currentTime = moment().format("YYYY MM DD");
-// console.log(currentTime);
+import dotenv from 'dotenv';
+dotenv.config();
 
 
-// const person: string = "Martin";
-// const count: number = 100;
