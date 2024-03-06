@@ -1,0 +1,1 @@
+console.log('FRONTEMD JAVASCRIPT STARTS');
