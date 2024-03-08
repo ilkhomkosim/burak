@@ -21,8 +21,8 @@ export enum Message{
 }
 
 class Errors extends Error {
-    public code: HttpCode;
-    public message: Message;
+    public code: HttpCode; //state property
+    public message: Message; //state property
 
     static standard = {
         code: HttpCode.INTERNAL_SERVER_ERROR,

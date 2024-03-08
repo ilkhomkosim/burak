@@ -20,17 +20,34 @@
 
 // TASK_I
 
-function getDigits(inputString: string): string {
-    const digitsArray: RegExpMatchArray | null = inputString.match(/\d/g);
+// function getDigits(inputString: string): string {
+//     const digitsArray: RegExpMatchArray | null = inputString.match(/\d/g);
 
-    const resultString: string = digitsArray ? digitsArray.join('') : '';
+//     const resultString: string = digitsArray ? digitsArray.join('') : '';
 
-    return resultString;
+//     return resultString;
+// }
+
+// const result: string = getDigits("m14i1t");
+// console.log(result); 
+
+// TASK_J
+
+function findLongestWord(inputString: string): string {
+    const words: string[] = inputString.split(" ");
+
+    let longestWord: string = "";
+
+    for (const word of words) {
+        if (word.length > longestWord.length) {
+            longestWord = word;
+        }
+    }
+    return longestWord;
 }
 
-const result: string = getDigits("m14i1t");
+const result: string = findLongestWord("I come from Uzbekistan");
 console.log(result); 
-
 
 
 
