@@ -52,18 +52,30 @@
 
 // TASK_K
 
-function countVowels(inputString: string): number {
-    const vowels: string[] = ['a', 'e', 'i', 'o', 'u'];
+// function countVowels(inputString: string): number {
+//     const vowels: string[] = ['a', 'e', 'i', 'o', 'u'];
     
-    const lowercaseInput = inputString.toLowerCase();
+//     const lowercaseInput = inputString.toLowerCase();
     
-    const vowelCount: number = lowercaseInput.split('').filter(char => vowels.includes(char)).length;
+//     const vowelCount: number = lowercaseInput.split('').filter(char => vowels.includes(char)).length;
 
-    return vowelCount;
+//     return vowelCount;
+// }
+
+// const result: number = countVowels("string");
+// console.log(result); 
+
+// TASK_L
+
+function reverseSentence(input: string): string {
+    const words = input.split(' ');
+    const reversedWords = words.map(word => word.split('').reverse().join('')); 
+    return reversedWords.join(' '); 
 }
 
-const result: number = countVowels("string");
-console.log(result); 
+
+const reversed = reverseSentence("I like coding!");
+console.log(reversed); 
 
 
 
