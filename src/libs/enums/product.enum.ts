@@ -5,7 +5,7 @@ export enum ProductSize{
     SET = "SET"
 }
 
-export enum Productvolume{
+export enum ProductVolume{
     HALF = 0.5,
     ONE = 1,
     ONE_POINT_TWO = 1.2,
@@ -20,7 +20,7 @@ export enum ProductStatus {
 }
 
 export enum ProducCollection {
-    PAUSE = "PAUSE",
+    DISH = "DISH",
     SALAD = "SALAD",
     DESSERT = "DESERT",
     DRINK = "DRINK",

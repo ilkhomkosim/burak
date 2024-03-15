@@ -3,7 +3,7 @@ import {
     ProducCollection, 
     ProductSize,
     ProductStatus, 
-    Productvolume 
+    ProductVolume 
 } from "../libs/enums/product.enum";
 
 const productSchema = new Schema(
@@ -42,14 +42,13 @@ const productSchema = new Schema(
     },
 
     productVolume: {
-        type: String,
-        enum: Productvolume,
-        default:Productvolume.ONE,
+        type: Number,
+        enum: ProductVolume,
+        default:ProductVolume.ONE,
     },
 
     productDesc: {
         type: String,
-        required: true,
     },
 
     productImage: {
@@ -67,7 +66,7 @@ const productSchema = new Schema(
 );
 
 
-productSchema.index({productNane: 1, ProductSize:1, Productvolume:1},
+productSchema.index({productNane: 1, ProductSize:1, ProductVolume:1},
     {unique:true}
     );
 export default mongoose.model("Product", productSchema)
