@@ -67,15 +67,31 @@
 
 // TASK_L
 
-function reverseSentence(input: string): string {
-    const words = input.split(' ');
-    const reversedWords = words.map(word => word.split('').reverse().join('')); 
-    return reversedWords.join(' '); 
+// function reverseSentence(input: string): string {
+//     const words = input.split(' ');
+//     const reversedWords = words.map(word => word.split('').reverse().join('')); 
+//     return reversedWords.join(' '); 
+// }
+
+
+// const reversed = reverseSentence("I like coding!");
+// console.log(reversed); 
+
+//TASK_M
+
+function getSquareNumbers(numbers: number[]): { number: number; square: number }[] {
+    const result: { number: number; square: number }[] = [];
+
+    for (const num of numbers) {
+        result.push({ number: num, square: num * num });
+    }
+
+    return result;
 }
 
+const squaredNumbers = getSquareNumbers([1, 2, 3]);
+console.log(squaredNumbers); 
 
-const reversed = reverseSentence("I like coding!");
-console.log(reversed); 
 
 
 
