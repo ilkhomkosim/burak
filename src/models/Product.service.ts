@@ -30,7 +30,7 @@ public async createNewProduct(input: ProductInput): Promise<Product> {
     } catch (err) {
         console.log("Error, model:createNewProduct", err);
         
-        console.error('Error, model:signup', err);
+        console.error('Error, model:createNewProduct:', err);
         throw new Errors(HttpCode.BAD_REQUEST, Message.USED_NICK_PHONE);
         
     }
