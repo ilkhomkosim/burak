@@ -79,18 +79,31 @@
 
 //TASK_M
 
-function getSquareNumbers(numbers: number[]): { number: number; square: number }[] {
-    const result: { number: number; square: number }[] = [];
+// function getSquareNumbers(numbers: number[]): { number: number; square: number }[] {
+//     const result: { number: number; square: number }[] = [];
 
-    for (const num of numbers) {
-        result.push({ number: num, square: num * num });
-    }
+//     for (const num of numbers) {
+//         result.push({ number: num, square: num * num });
+//     }
 
-    return result;
+//     return result;
+// }
+
+// const squaredNumbers = getSquareNumbers([1, 2, 3]);
+// console.log(squaredNumbers); 
+
+
+//TASK_M
+
+function Palindrome(word: string): boolean {
+    const formattedWord = word.toLowerCase().replace(/[^a-z0-9]/g, '');
+    const reversedWord = formattedWord.split('').reverse().join('');
+    return formattedWord === reversedWord;
 }
 
-const squaredNumbers = getSquareNumbers([1, 2, 3]);
-console.log(squaredNumbers); 
+console.log(Palindrome("dad"));  
+console.log(Palindrome("son")); 
+
 
 
 
