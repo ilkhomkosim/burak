@@ -95,15 +95,33 @@
 
 //TASK_M
 
-function Palindrome(word: string): boolean {
-    const formattedWord = word.toLowerCase().replace(/[^a-z0-9]/g, '');
-    const reversedWord = formattedWord.split('').reverse().join('');
-    return formattedWord === reversedWord;
+// function Palindrome(word: string): boolean {
+//     const formattedWord = word.toLowerCase().replace(/[^a-z0-9]/g, '');
+//     const reversedWord = formattedWord.split('').reverse().join('');
+//     return formattedWord === reversedWord;
+// }
+
+// console.log(Palindrome("dad"));  
+// console.log(Palindrome("son")); 
+
+// TASK_N
+
+function calculateSumOfNumbers(arr: any[]): number {
+    let sum = 0;
+
+    for (const item of arr) {
+        if (typeof item === 'number') {
+            sum += item;
+        }
+        else if (typeof item === 'string' && !isNaN(Number(item))) {
+            sum += Number(item);
+        }
+    }
+
+    return sum;
 }
 
-console.log(Palindrome("dad"));  
-console.log(Palindrome("son")); 
-
+console.log(calculateSumOfNumbers([10, "10", {son: 10}, true, 35])); 
 
 
 
