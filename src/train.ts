@@ -106,22 +106,36 @@
 
 // TASK_N
 
-function calculateSumOfNumbers(arr: any[]): number {
-    let sum = 0;
+// function calculateSumOfNumbers(arr: any[]): number {
+//     let sum = 0;
 
-    for (const item of arr) {
-        if (typeof item === 'number') {
-            sum += item;
-        }
-        else if (typeof item === 'string' && !isNaN(Number(item))) {
-            sum += Number(item);
-        }
+//     for (const item of arr) {
+//         if (typeof item === 'number') {
+//             sum += item;
+//         }
+//         else if (typeof item === 'string' && !isNaN(Number(item))) {
+//             sum += Number(item);
+//         }
+//     }
+
+//     return sum;
+// }
+
+// console.log(calculateSumOfNumbers([10, "10", {son: 10}, true, 35])); 
+
+// TASK_P
+
+function objectToArray(obj: any) {
+    let result = [];
+
+    for (let key in obj) {
+        result.push([key, obj[key]]);
     }
 
-    return sum;
+    return result;
 }
 
-console.log(calculateSumOfNumbers([10, "10", {son: 10}, true, 35])); 
+console.log(objectToArray({a: 10, b: 20}));
 
 
 
