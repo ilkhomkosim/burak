@@ -16,7 +16,7 @@ export interface Product{
 }
 
 export interface ProductInput{
-    productStatus: ProductStatus;
+    productStatus?: ProductStatus;
     productCollection: ProducCollection;
     productName: string;
     productPrice: number;

@@ -3,9 +3,9 @@ import multer from "multer";
 import {v4} from "uuid";
 
 /** MULTER IMAGE UPLOADER */
-function gettargetImageStore(address: any) {
+function getTargetImageStore(address: any) {
     return multer.diskStorage({
-        destination: function(req, file, cb) {
+        destination: function (req, file, cb) {
             cb(null, `./uploads/${address}`);
         },
         filename: function(req, file, cb){
@@ -16,8 +16,8 @@ function gettargetImageStore(address: any) {
     });
 }
 
-const makeUploader = (address: string) =>{
-    const storage = gettargetImageStore(address);
+const makeUploader = (address: string) => {
+    const storage = getTargetImageStore(address);
     return multer({ storage: storage});
 };
 

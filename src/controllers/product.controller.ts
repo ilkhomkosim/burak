@@ -31,7 +31,7 @@ productController.createNewProduct = async (
     ) => {
     try{
         console.log("createNewProduct");
-        console.log("req.body:", req.body);
+        console.log("req.files:", req.files);
         
         if(!req.files?.length)
             throw new Errors(HttpCode.INTERNAL_SERVER_ERROR, Message.CREATE_FAILED);
@@ -40,6 +40,7 @@ productController.createNewProduct = async (
         data.productImages = req.files?.map(ele => {
             return ele.path.replace(/\\/g, '/');
         });
+        
         await productService.createNewProduct(data);
         res.send(
             `<script> alert(" Successful creation!"); window.location.replace('/admin/product/all') </script>`

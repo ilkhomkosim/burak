@@ -125,17 +125,26 @@
 
 // TASK_P
 
-function objectToArray(obj: any) {
-    let result = [];
+// function objectToArray(obj: any) {
+//     let result = [];
 
-    for (let key in obj) {
-        result.push([key, obj[key]]);
-    }
+//     for (let key in obj) {
+//         result.push([key, obj[key]]);
+//     }
 
-    return result;
+//     return result;
+// }
+
+// console.log(objectToArray({a: 10, b: 20}));
+
+// TASK_Q
+
+function hasProperty(obj: object, prop: string): boolean {
+    return obj.hasOwnProperty(prop);
 }
 
-console.log(objectToArray({a: 10, b: 20}));
+console.log(hasProperty({ name: "BMW", model: "M3" }, "model")); // true
+console.log(hasProperty({ name: "BMW", model: "M3" }, "year"));  // false
 
 
 
