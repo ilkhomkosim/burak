@@ -139,13 +139,23 @@
 
 // TASK_Q
 
-function hasProperty(obj: object, prop: string): boolean {
-    return obj.hasOwnProperty(prop);
+// function hasProperty(obj: object, prop: string): boolean {
+//     return obj.hasOwnProperty(prop);
+// }
+
+// console.log(hasProperty({ name: "BMW", model: "M3" }, "model")); // true
+// console.log(hasProperty({ name: "BMW", model: "M3" }, "year"));  // false
+
+
+// TASK_R
+
+function calculate(expression: string): number {
+    const operands = expression.split('+');
+    
+    const sum = operands.reduce((acc, curr) => acc + parseInt(curr), 0);
+    
+    return sum;
 }
-
-console.log(hasProperty({ name: "BMW", model: "M3" }, "model")); // true
-console.log(hasProperty({ name: "BMW", model: "M3" }, "year"));  // false
-
-
+console.log(calculate("1+3")); // 4
 
 
