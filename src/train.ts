@@ -149,13 +149,26 @@
 
 // TASK_R
 
-function calculate(expression: string): number {
-    const operands = expression.split('+');
+// function calculate(expression: string): number {
+//     const operands = expression.split('+');
     
-    const sum = operands.reduce((acc, curr) => acc + parseInt(curr), 0);
+//     const sum = operands.reduce((acc, curr) => acc + parseInt(curr), 0);
     
-    return sum;
+//     return sum;
+// }
+// console.log(calculate("1+3")); // 4
+
+//TASK_S
+
+function missingNumber(nums: number[]): number {
+    const n = nums.length;
+    const expectedSum = n * (n + 1) / 2;
+    const actualSum = nums.reduce((acc, curr) => acc + curr, 0);
+    const missing = expectedSum - actualSum;
+    return missing;
 }
-console.log(calculate("1+3")); // 4
+
+console.log(missingNumber([3, 0, 1])); // 2
+
 
 
