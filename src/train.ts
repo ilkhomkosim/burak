@@ -172,35 +172,48 @@
 
 //TASK_T
 
-function mergeSortedArrays(arr1: number[], arr2: number[]): number[] {
-    const mergedArray: number[] = [];
-    let i = 0;
-    let j = 0; 
+// function mergeSortedArrays(arr1: number[], arr2: number[]): number[] {
+//     const mergedArray: number[] = [];
+//     let i = 0;
+//     let j = 0; 
 
-    while (i < arr1.length && j < arr2.length) {
-        if (arr1[i] < arr2[j]) {
-            mergedArray.push(arr1[i]);
-            i++; 
-        } else {
-            mergedArray.push(arr2[j]); 
-            j++; 
-        }
+//     while (i < arr1.length && j < arr2.length) {
+//         if (arr1[i] < arr2[j]) {
+//             mergedArray.push(arr1[i]);
+//             i++; 
+//         } else {
+//             mergedArray.push(arr2[j]); 
+//             j++; 
+//         }
+//     }
+
+//     while (i < arr1.length) {
+//         mergedArray.push(arr1[i]); 
+//         i++;
+//     }
+
+//     while (j < arr2.length) {
+//         mergedArray.push(arr2[j]); 
+//         j++;
+//     }
+
+//     return mergedArray;
+// }
+
+// console.log(mergeSortedArrays([0, 3, 4, 31], [4, 6, 30])); 
+
+// TASK_U
+
+function sumOdds(n: number): number {
+    let count = 0;
+    for (let i = 1; i <= n; i += 2) {
+        count++;
     }
-
-    while (i < arr1.length) {
-        mergedArray.push(arr1[i]); 
-        i++;
-    }
-
-    while (j < arr2.length) {
-        mergedArray.push(arr2[j]); 
-        j++;
-    }
-
-    return mergedArray;
+    return count;
 }
 
-console.log(mergeSortedArrays([0, 3, 4, 31], [4, 6, 30])); 
+console.log(sumOdds(9)); 
+console.log(sumOdds(11));
 
 
 
