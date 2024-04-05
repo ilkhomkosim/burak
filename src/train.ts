@@ -204,16 +204,32 @@
 
 // TASK_U
 
-function sumOdds(n: number): number {
-    let count = 0;
-    for (let i = 1; i <= n; i += 2) {
-        count++;
+// function sumOdds(n: number): number {
+//     let count = 0;
+//     for (let i = 1; i <= n; i += 2) {
+//         count++;
+//     }
+//     return count;
+// }
+
+// console.log(sumOdds(9)); 
+// console.log(sumOdds(11));
+
+// TASK_V
+function countChars(str: string): { [key: string]: number } {
+    const charCount: { [key: string]: number } = {};
+    for (const char of str) {
+        if (charCount[char]) {
+            charCount[char]++;
+        } else {
+            charCount[char] = 1;
+        }
     }
-    return count;
+    return charCount;
 }
 
-console.log(sumOdds(9)); 
-console.log(sumOdds(11));
+console.log(countChars("hello")); 
+
 
 
 
