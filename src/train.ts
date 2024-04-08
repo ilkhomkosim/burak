@@ -216,20 +216,32 @@
 // console.log(sumOdds(11));
 
 // TASK_V
-function countChars(str: string): { [key: string]: number } {
-    const charCount: { [key: string]: number } = {};
-    for (const char of str) {
-        if (charCount[char]) {
-            charCount[char]++;
-        } else {
-            charCount[char] = 1;
-        }
+// function countChars(str: string): { [key: string]: number } {
+//     const charCount: { [key: string]: number } = {};
+//     for (const char of str) {
+//         if (charCount[char]) {
+//             charCount[char]++;
+//         } else {
+//             charCount[char] = 1;
+//         }
+//     }
+//     return charCount;
+// }
+
+// console.log(countChars("hello")); 
+
+// TASK_W
+
+function chunkArray(arr: any[], size: number): any[][] {
+    const result: any[][] = [];
+    for (let i = 0; i < arr.length; i += size) {
+        result.push(arr.slice(i, i + size));
     }
-    return charCount;
+    return result;
 }
 
-console.log(countChars("hello")); 
 
+console.log(chunkArray([1,2,3,4,5,6,7,8,9,10], 3)); 
 
 
 
