@@ -232,16 +232,51 @@
 
 // TASK_W
 
-function chunkArray(arr: any[], size: number): any[][] {
-    const result: any[][] = [];
-    for (let i = 0; i < arr.length; i += size) {
-        result.push(arr.slice(i, i + size));
-    }
-    return result;
+// function chunkArray(arr: any[], size: number): any[][] {
+//     const result: any[][] = [];
+//     for (let i = 0; i < arr.length; i += size) {
+//         result.push(arr.slice(i, i + size));
+//     }
+//     return result;
+// }
+
+
+// console.log(chunkArray([1,2,3,4,5,6,7,8,9,10], 3)); 
+
+// TASK_X
+
+interface AnyObject {
+    [key: string]: any;
 }
 
+function countOccurrences(obj: AnyObject, key: string): number {
+    let count = 0;
 
-console.log(chunkArray([1,2,3,4,5,6,7,8,9,10], 3)); 
+    if (typeof obj[key] === 'string') {
+        if (obj[key] === key) {
+            count++;
+        }
+    }
+
+    for (const nestedKey in obj) {
+        if (typeof obj[nestedKey] === 'object') {
+            count += countOccurrences(obj[nestedKey], key);
+        }
+    }
+
+    return count;
+}
+
+const obj: AnyObject = {
+    model: 'Bugatti',
+    steer: {
+        model: 'HANKOOK',
+        size: 30
+    }
+};
+
+console.log(countOccurrences(obj, 'model')); 
+
 
 
 
