@@ -50,7 +50,7 @@ const memberSchema = new Schema({
     },
 
 },
- {timestamps:true}  // CreatedAt UpdatedAT
+ {timestamps:true, collection: "members"}  // CreatedAt UpdatedAT
 ); 
 
 
