@@ -245,37 +245,53 @@
 
 // TASK_X
 
-interface AnyObject {
-    [key: string]: any;
-}
+// interface AnyObject {
+//     [key: string]: any;
+// }
 
-function countOccurrences(obj: AnyObject, key: string): number {
-    let count = 0;
+// function countOccurrences(obj: AnyObject, key: string): number {
+//     let count = 0;
 
-    if (typeof obj[key] === 'string') {
-        if (obj[key] === key) {
-            count++;
+//     if (typeof obj[key] === 'string') {
+//         if (obj[key] === key) {
+//             count++;
+//         }
+//     }
+
+//     for (const nestedKey in obj) {
+//         if (typeof obj[nestedKey] === 'object') {
+//             count += countOccurrences(obj[nestedKey], key);
+//         }
+//     }
+
+//     return count;
+// }
+
+// const obj: AnyObject = {
+//     model: 'Bugatti',
+//     steer: {
+//         model: 'HANKOOK',
+//         size: 30
+//     }
+// };
+
+// console.log(countOccurrences(obj, 'model')); 
+
+// TASK_V
+
+function findIntersection(arr1: any[], arr2: any[]): any[] {
+    const intersection: any[] = [];
+
+    for (const item1 of arr1) {
+        if (arr2.includes(item1)) {
+            intersection.push(item1);
         }
     }
 
-    for (const nestedKey in obj) {
-        if (typeof obj[nestedKey] === 'object') {
-            count += countOccurrences(obj[nestedKey], key);
-        }
-    }
-
-    return count;
+    return intersection;
 }
 
-const obj: AnyObject = {
-    model: 'Bugatti',
-    steer: {
-        model: 'HANKOOK',
-        size: 30
-    }
-};
-
-console.log(countOccurrences(obj, 'model')); 
+console.log(findIntersection([1,2,3], [3,2,0]));
 
 
 
