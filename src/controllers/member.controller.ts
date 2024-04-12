@@ -137,10 +137,10 @@ memberController.login = async (req:Request, res:Response) => {
         try{
             const token = req.cookies["accessToken"];
             if(token) req.member = await authService.checkAuth(token);
-
+            next();
         } catch(err) {
             console.log("Error,  verifyAuth:", err);
-            next()
+            next();
         }
 
     }

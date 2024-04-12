@@ -41,7 +41,7 @@ public async getProducts(inquiry: ProductInquiry): Promise<Product[]> {
     return result;
 }
 
-public async getProduct( memberId: ObjectId | null, id:string): Promise<Product> {
+public async getProduct( memberId: ObjectId | null, id: string): Promise<Product> {
     const productId = shapeIntoMongooseObjectId(id);
 
     let result = await this.productModel.findOne({_id: productId, productStatus: ProductStatus.PROCESS}).exec();
@@ -49,14 +49,13 @@ public async getProduct( memberId: ObjectId | null, id:string): Promise<Product>
     if(!result) throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_FOUND);
 
     if(memberId) {
-            // check exsistamce 
+            // check exsistance 
             const input: ViewInput = {
                 memberId: memberId,
                 viewRefId: productId,
                 viewGroup: ViewGroup.PRODUCT,
             }
                 const existView = await this.viewService.checkViewExistance(input);
-
                 console.log("exist:", !!existView);
                 
                 if(!existView) {
@@ -73,7 +72,6 @@ public async getProduct( memberId: ObjectId | null, id:string): Promise<Product>
                     result = await this.productModel.findByIdAndUpdate(productId, {$inc:{productViews: +1}},
                         {new: true}
                         ).exec();
-
                 }
             
     }
