@@ -133,7 +133,11 @@ memberController.login = async (req:Request, res:Response) => {
 
     }
 
-    memberController.retrieveAuth = async (req: ExtendedRequest, res:Response, next:NextFunction) => {
+    memberController.retrieveAuth = async (
+        req: ExtendedRequest, 
+        res:Response, 
+        next:NextFunction
+    ) => {
         try{
             const token = req.cookies["accessToken"];
             if(token) req.member = await authService.checkAuth(token);
@@ -142,7 +146,6 @@ memberController.login = async (req:Request, res:Response) => {
             console.log("Error,  verifyAuth:", err);
             next();
         }
-
     }
 
 export default memberController;

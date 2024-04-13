@@ -11,20 +11,21 @@ class ViewService {
         this.viewModel = ViewModel;
     }
 
-    public async checkViewExistance(input:ViewInput): Promise<View> {
-        return await this.viewModel.findOne({memberId: input.memberId, viewRefId:input.viewRefId}).exec();
+    public async checkViewExistance(input: ViewInput): Promise<View> {
+        const { memberId, viewRefId } = input;
+        return await this.viewModel.findOne({ memberId: memberId, viewRefId: viewRefId }).exec();
     }
 
     public async insertMemberView(input: ViewInput): Promise<View> {
-        try{
-            return await this.viewModel.create(input);
-
-        } catch(err) {
-            console.log("ERROR, model:insertMemberView", err);
-            throw new Errors(HttpCode.BAD_REQUEST, Message.CREATE_FAILED)
-            
+        try {
+            const newView = new this.viewModel(input);
+            const savedView = await newView.save();
+            return savedView;
+        } catch (error) {
+            throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_FOUND);
         }
     }
+    
 }
 
-export default ViewService
+export default ViewService;
