@@ -279,19 +279,35 @@
 
 // TASK_V
 
-function findIntersection(arr1: any[], arr2: any[]): any[] {
-    const intersection: any[] = [];
+// function findIntersection(arr1: any[], arr2: any[]): any[] {
+//     const intersection: any[] = [];
 
-    for (const item1 of arr1) {
-        if (arr2.includes(item1)) {
-            intersection.push(item1);
+//     for (const item1 of arr1) {
+//         if (arr2.includes(item1)) {
+//             intersection.push(item1);
+//         }
+//     }
+
+//     return intersection;
+// }
+
+// console.log(findIntersection([1,2,3], [3,2,0]));
+
+// TASK_Z
+
+function sumEvens(nums: number[]): number {
+    let sum = 0;
+    for (const num of nums) {
+        if (num % 2 === 0) {
+            sum += num;
         }
     }
-
-    return intersection;
+    return sum;
 }
 
-console.log(findIntersection([1,2,3], [3,2,0]));
+console.log(sumEvens([1, 2, 3]));
+
+
 
 
 
