@@ -309,15 +309,25 @@
 
 // TASK_ZA
 
-function sortByAge(arr: { age: number }[]): { age: number }[] {
-    return arr.sort((a, b) => a.age - b.age);
+// function sortByAge(arr: { age: number }[]): { age: number }[] {
+//     return arr.sort((a, b) => a.age - b.age);
+// }
+
+// const arr = [{ age: 23 }, { age: 21 }, { age: 13 }];
+
+// const sortedArr = sortByAge(arr);
+// console.log(sortedArr);
+
+// TASK_ZB
+
+function randomBetween(min: number, max: number): number {
+    return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-const arr = [{ age: 23 }, { age: 21 }, { age: 13 }];
+const randomNumber = randomBetween(30, 50);
+console.log(randomNumber); 
 
-const sortedArr = sortByAge(arr);
-console.log(sortedArr);
-
+  
 
 
 
