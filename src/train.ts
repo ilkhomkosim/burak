@@ -329,15 +329,29 @@
 
 //  TASK_ZC 
 
-function celsiusToFahrenheit(celsius: number): number {
-    return (celsius * 9/5) + 32;
+// function celsiusToFahrenheit(celsius: number): number {
+//     return (celsius * 9/5) + 32;
+// }
+
+
+// console.log(celsiusToFahrenheit(0)); 
+
+
+// TASK_ZD
+
+function changeNumberInArray(index: number, array: number[], newNumber: number): number[] {
+    if (index >= 0 && index < array.length) { 
+        const newArray = [...array]; 
+        newArray[index] = newNumber;
+        return newArray; 
+    } else {
+        console.error("Invalid index!"); 
+        return array; 
+    }
 }
 
+console.log(changeNumberInArray(1, [1,3,7,2], 2));
 
-console.log(celsiusToFahrenheit(0)); 
-
-
-  
 
 
 
