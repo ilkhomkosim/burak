@@ -339,18 +339,37 @@
 
 // TASK_ZD
 
-function changeNumberInArray(index: number, array: number[], newNumber: number): number[] {
-    if (index >= 0 && index < array.length) { 
-        const newArray = [...array]; 
-        newArray[index] = newNumber;
-        return newArray; 
-    } else {
-        console.error("Invalid index!"); 
-        return array; 
+// function changeNumberInArray(index: number, array: number[], newNumber: number): number[] {
+//     if (index >= 0 && index < array.length) { 
+//         const newArray = [...array]; 
+//         newArray[index] = newNumber;
+//         return newArray; 
+//     } else {
+//         console.error("Invalid index!"); 
+//         return array; 
+//     }
+// }
+
+// console.log(changeNumberInArray(1, [1,3,7,2], 2));
+
+
+// TASK_ZE
+
+function removeDuplicate(str: string): string {
+    const charMap: { [key: string]: boolean } = {};
+
+    let result = '';
+    for (let char of str) {
+        if (!charMap[char]) {
+            charMap[char] = true;
+            result += char;
+        }
     }
+
+    return result;
 }
 
-console.log(changeNumberInArray(1, [1,3,7,2], 2));
+console.log(removeDuplicate('stringg')); 
 
 
 
