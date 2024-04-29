@@ -355,22 +355,39 @@
 
 // TASK_ZE
 
-function removeDuplicate(str: string): string {
-    const charMap: { [key: string]: boolean } = {};
+// function removeDuplicate(str: string): string {
+//     const charMap: { [key: string]: boolean } = {};
 
-    let result = '';
-    for (let char of str) {
-        if (!charMap[char]) {
-            charMap[char] = true;
-            result += char;
+//     let result = '';
+//     for (let char of str) {
+//         if (!charMap[char]) {
+//             charMap[char] = true;
+//             result += char;
+//         }
+//     }
+
+//     return result;
+// }
+
+// console.log(removeDuplicate('stringg')); 
+
+// TASK_ZF
+
+function capitalizeWords(input: string): string {
+    const words: string[] = input.split(" ");
+    
+    const capitalizedWords: string[] = words.map(word => {
+        if (word.length <= 2) {
+            return word;
         }
-    }
-
-    return result;
+        return word.charAt(0).toUpperCase() + word.slice(1);
+    });
+    
+    return capitalizedWords.join(" ");
 }
 
-console.log(removeDuplicate('stringg')); 
-
+const result: string = capitalizeWords('name should be a string');
+console.log(result); 
 
 
 
