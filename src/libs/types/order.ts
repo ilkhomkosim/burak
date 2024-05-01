@@ -3,6 +3,7 @@ import { OrderStatus } from "../enums/order.enum";
 import { Product } from "./product";
 
 export interface OrderItem{
+    _id: ObjectId;
     itemQuantity: Number;
     itemPrice: number;
     orderId: ObjectId;
