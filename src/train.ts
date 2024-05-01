@@ -373,20 +373,29 @@
 
 // TASK_ZF
 
-function capitalizeWords(input: string): string {
-    const words: string[] = input.split(" ");
+// function capitalizeWords(input: string): string {
+//     const words: string[] = input.split(" ");
     
-    const capitalizedWords: string[] = words.map(word => {
-        if (word.length <= 2) {
-            return word;
-        }
-        return word.charAt(0).toUpperCase() + word.slice(1);
-    });
+//     const capitalizedWords: string[] = words.map(word => {
+//         if (word.length <= 2) {
+//             return word;
+//         }
+//         return word.charAt(0).toUpperCase() + word.slice(1);
+//     });
     
-    return capitalizedWords.join(" ");
+//     return capitalizedWords.join(" ");
+// }
+
+// const result: string = capitalizeWords('name should be a string');
+// console.log(result); 
+
+// TASK_ZG
+
+function toSnakeCase(input: string): string {
+    return input.replace(/\s+/g, '_').toLowerCase();
 }
 
-const result: string = capitalizeWords('name should be a string');
+const result = toSnakeCase('name should be a string');
 console.log(result); 
 
 
