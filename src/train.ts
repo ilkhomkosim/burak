@@ -391,12 +391,31 @@
 
 // TASK_ZG
 
-function toSnakeCase(input: string): string {
-    return input.replace(/\s+/g, '_').toLowerCase();
+// function toSnakeCase(input: string): string {
+//     return input.replace(/\s+/g, '_').toLowerCase();
+// }
+
+// const result = toSnakeCase('name should be a string');
+// console.log(result); 
+
+// TASK_ZH
+
+function findDisappearedNumbers(nums: number[]): number[] {
+    const maxNum = Math.max(...nums); 
+    const allNumbers = Array.from({ length: maxNum }, (_, index) => index + 1); // Barcha raqamlar to'plami
+
+    const disappearedNumbers: number[] = [];
+    for (let i = 0; i < allNumbers.length; i++) {
+        if (!nums.includes(allNumbers[i])) {
+            disappearedNumbers.push(allNumbers[i]);
+        }
+    }
+
+    return disappearedNumbers;
 }
 
-const result = toSnakeCase('name should be a string');
-console.log(result); 
+console.log(findDisappearedNumbers([1, 3, 4, 7])); 
+
 
 
 
