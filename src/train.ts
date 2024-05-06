@@ -400,21 +400,39 @@
 
 // TASK_ZH
 
-function findDisappearedNumbers(nums: number[]): number[] {
-    const maxNum = Math.max(...nums); 
-    const allNumbers = Array.from({ length: maxNum }, (_, index) => index + 1); // Barcha raqamlar to'plami
+// function findDisappearedNumbers(nums: number[]): number[] {
+//     const maxNum = Math.max(...nums); 
+//     const allNumbers = Array.from({ length: maxNum }, (_, index) => index + 1); // Barcha raqamlar to'plami
 
-    const disappearedNumbers: number[] = [];
-    for (let i = 0; i < allNumbers.length; i++) {
-        if (!nums.includes(allNumbers[i])) {
-            disappearedNumbers.push(allNumbers[i]);
-        }
-    }
+//     const disappearedNumbers: number[] = [];
+//     for (let i = 0; i < allNumbers.length; i++) {
+//         if (!nums.includes(allNumbers[i])) {
+//             disappearedNumbers.push(allNumbers[i]);
+//         }
+//     }
 
-    return disappearedNumbers;
+//     return disappearedNumbers;
+// }
+
+// console.log(findDisappearedNumbers([1, 3, 4, 7])); 
+
+// TASK_ZI
+
+function delayHelloWorld(message: string): Promise<string> {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve(message);
+        }, 3000); 
+    });
 }
+delayHelloWorld("Hello World")
+    .then((result) => {
+        console.log(result); 
+    })
+    .catch((error) => {
+        console.error(error);
+    });
 
-console.log(findDisappearedNumbers([1, 3, 4, 7])); 
 
 
 
