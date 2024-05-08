@@ -418,20 +418,35 @@
 
 // TASK_ZI
 
-function delayHelloWorld(message: string): Promise<string> {
-    return new Promise((resolve) => {
-        setTimeout(() => {
-            resolve(message);
-        }, 3000); 
-    });
+// function delayHelloWorld(message: string): Promise<string> {
+//     return new Promise((resolve) => {
+//         setTimeout(() => {
+//             resolve(message);
+//         }, 3000); 
+//     });
+// }
+// delayHelloWorld("Hello World")
+//     .then((result) => {
+//         console.log(result); 
+//     })
+//     .catch((error) => {
+//         console.error(error);
+//     });
+
+
+// TASK_ZJ
+
+function reduceNestedArray(arr: any[]): number {
+    return arr.reduce((acc, curr) => {
+        if (Array.isArray(curr)) {
+            return acc + reduceNestedArray(curr);
+        } else {
+            return acc + (typeof curr === 'number' ? curr : 0);
+        }
+    }, 0);
 }
-delayHelloWorld("Hello World")
-    .then((result) => {
-        console.log(result); 
-    })
-    .catch((error) => {
-        console.error(error);
-    });
+
+console.log(reduceNestedArray([1, [1, 2, [4]]])); 
 
 
 
