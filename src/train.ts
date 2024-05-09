@@ -436,17 +436,31 @@
 
 // TASK_ZJ
 
-function reduceNestedArray(arr: any[]): number {
-    return arr.reduce((acc, curr) => {
-        if (Array.isArray(curr)) {
-            return acc + reduceNestedArray(curr);
-        } else {
-            return acc + (typeof curr === 'number' ? curr : 0);
-        }
-    }, 0);
+// function reduceNestedArray(arr: any[]): number {
+//     return arr.reduce((acc, curr) => {
+//         if (Array.isArray(curr)) {
+//             return acc + reduceNestedArray(curr);
+//         } else {
+//             return acc + (typeof curr === 'number' ? curr : 0);
+//         }
+//     }, 0);
+// }
+
+// console.log(reduceNestedArray([1, [1, 2, [4]]])); 
+
+
+// TASK_ZK
+
+function printNumbers(): void {
+    for (let i = 1; i <= 5; i++) {
+        console.log(i);
+    }
 }
 
-console.log(reduceNestedArray([1, [1, 2, [4]]])); 
+printNumbers();
+setTimeout(() => {
+    console.log("Ish to'xtatildi");
+}, 5000);
 
 
 
