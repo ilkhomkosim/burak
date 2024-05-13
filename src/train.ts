@@ -451,16 +451,26 @@
 
 // TASK_ZK
 
-function printNumbers(): void {
-    for (let i = 1; i <= 5; i++) {
-        console.log(i);
-    }
+// function printNumbers(): void {
+//     for (let i = 1; i <= 5; i++) {
+//         console.log(i);
+//     }
+// }
+
+// printNumbers();
+// setTimeout(() => {
+//     console.log("Ish to'xtatildi");
+// }, 5000);
+
+// TASK_ZL
+
+function stringToKebab(input: string): string {
+    return input.toLowerCase().replace(/\s+/g, '-');
 }
 
-printNumbers();
-setTimeout(() => {
-    console.log("Ish to'xtatildi");
-}, 5000);
+
+console.log(stringToKebab("I love Kebab"));
+
 
 
 
