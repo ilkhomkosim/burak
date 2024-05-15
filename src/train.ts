@@ -464,12 +464,22 @@
 
 // TASK_ZL
 
-function stringToKebab(input: string): string {
-    return input.toLowerCase().replace(/\s+/g, '-');
+// function stringToKebab(input: string): string {
+//     return input.toLowerCase().replace(/\s+/g, '-');
+// }
+
+
+// console.log(stringToKebab("I love Kebab"));
+
+// TASK_ZM
+
+function reverseInteger(num: number): number {
+    const reversedNum: number = parseInt(num.toString().split('').reverse().join(''));
+    return reversedNum;
 }
 
+console.log(reverseInteger(123456789)); 
 
-console.log(stringToKebab("I love Kebab"));
 
 
 
