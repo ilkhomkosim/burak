@@ -473,12 +473,23 @@
 
 // TASK_ZM
 
-function reverseInteger(num: number): number {
-    const reversedNum: number = parseInt(num.toString().split('').reverse().join(''));
-    return reversedNum;
+// function reverseInteger(num: number): number {
+//     const reversedNum: number = parseInt(num.toString().split('').reverse().join(''));
+//     return reversedNum;
+// }
+
+// console.log(reverseInteger(123456789)); 
+
+// TASK_ZN
+
+function rotateArray(arr: number[], index: number): number[] {
+    const actualIndex = index % arr.length;
+    return arr.slice(-actualIndex).concat(arr.slice(0, -actualIndex));
 }
 
-console.log(reverseInteger(123456789)); 
+const result = rotateArray([1, 2, 3, 4, 5, 6], 3);
+console.log(result); 
+
 
 
 
