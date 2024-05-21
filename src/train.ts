@@ -482,13 +482,41 @@
 
 // TASK_ZN
 
-function rotateArray(arr: number[], index: number): number[] {
-    const actualIndex = index % arr.length;
-    return arr.slice(-actualIndex).concat(arr.slice(0, -actualIndex));
+// function rotateArray(arr: number[], index: number): number[] {
+//     const actualIndex = index % arr.length;
+//     return arr.slice(-actualIndex).concat(arr.slice(0, -actualIndex));
+// }
+
+// const result = rotateArray([1, 2, 3, 4, 5, 6], 3);
+// console.log(result); 
+
+// TASK_ZP
+
+function majorityElement(arr: number[]): number | null {
+    const frequencyMap: { [key: number]: number } = {};
+
+    for (let num of arr) {
+        if (frequencyMap[num]) {
+            frequencyMap[num]++;
+        } else {
+            frequencyMap[num] = 1;
+        }
+    }
+
+    let maxCount = 0;
+    let majorityElement = null;
+    for (let key in frequencyMap) {
+        if (frequencyMap[key] > maxCount) {
+            maxCount = frequencyMap[key];
+            majorityElement = parseInt(key);
+        }
+    }
+
+    return majorityElement;
 }
 
-const result = rotateArray([1, 2, 3, 4, 5, 6], 3);
-console.log(result); 
+console.log(majorityElement([1, 2, 3, 4, 5, 4, 3, 4])); 
+
 
 
 
