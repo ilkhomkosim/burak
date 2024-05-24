@@ -492,31 +492,56 @@
 
 // TASK_ZP
 
-function majorityElement(arr: number[]): number | null {
-    const frequencyMap: { [key: number]: number } = {};
+// function majorityElement(arr: number[]): number | null {
+//     const frequencyMap: { [key: number]: number } = {};
+
+//     for (let num of arr) {
+//         if (frequencyMap[num]) {
+//             frequencyMap[num]++;
+//         } else {
+//             frequencyMap[num] = 1;
+//         }
+//     }
+
+//     let maxCount = 0;
+//     let majorityElement = null;
+//     for (let key in frequencyMap) {
+//         if (frequencyMap[key] > maxCount) {
+//             maxCount = frequencyMap[key];
+//             majorityElement = parseInt(key);
+//         }
+//     }
+
+//     return majorityElement;
+// }
+
+// console.log(majorityElement([1, 2, 3, 4, 5, 4, 3, 4])); 
+
+// TASK_ZQ
+
+function findDuplicates(arr: number[]): number[] {
+    const frequency: { [key: number]: number } = {};
 
     for (let num of arr) {
-        if (frequencyMap[num]) {
-            frequencyMap[num]++;
+        if (frequency[num]) {
+            frequency[num]++;
         } else {
-            frequencyMap[num] = 1;
+            frequency[num] = 1;
         }
     }
 
-    let maxCount = 0;
-    let majorityElement = null;
-    for (let key in frequencyMap) {
-        if (frequencyMap[key] > maxCount) {
-            maxCount = frequencyMap[key];
-            majorityElement = parseInt(key);
+    const duplicates: number[] = [];
+    for (let key in frequency) {
+        if (frequency[key] === 2) {
+            duplicates.push(Number(key));
         }
     }
 
-    return majorityElement;
+    return duplicates;
 }
 
-console.log(majorityElement([1, 2, 3, 4, 5, 4, 3, 4])); 
-
+const result = findDuplicates([1, 2, 3, 4, 5, 4, 3, 4]);
+console.log(result); 
 
 
 
