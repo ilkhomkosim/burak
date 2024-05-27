@@ -519,28 +519,52 @@
 
 // TASK_ZQ
 
-function findDuplicates(arr: number[]): number[] {
-    const frequency: { [key: number]: number } = {};
+// function findDuplicates(arr: number[]): number[] {
+//     const frequency: { [key: number]: number } = {};
 
-    for (let num of arr) {
-        if (frequency[num]) {
-            frequency[num]++;
-        } else {
-            frequency[num] = 1;
+//     for (let num of arr) {
+//         if (frequency[num]) {
+//             frequency[num]++;
+//         } else {
+//             frequency[num] = 1;
+//         }
+//     }
+
+//     const duplicates: number[] = [];
+//     for (let key in frequency) {
+//         if (frequency[key] === 2) {
+//             duplicates.push(Number(key));
+//         }
+//     }
+
+//     return duplicates;
+// }
+
+// const result = findDuplicates([1, 2, 3, 4, 5, 4, 3, 4]);
+// console.log(result); 
+
+
+// TASK_ZR
+
+function countNumberAndLetters(input: string): { number: number, letter: number } {
+    let numberCount = 0;
+    let letterCount = 0;
+
+    for (const char of input) {
+        if (/[0-9]/.test(char)) {
+            numberCount++;
+        } else if (/[a-zA-Z]/.test(char)) {
+            letterCount++;
         }
     }
 
-    const duplicates: number[] = [];
-    for (let key in frequency) {
-        if (frequency[key] === 2) {
-            duplicates.push(Number(key));
-        }
-    }
-
-    return duplicates;
+    return {
+        number: numberCount,
+        letter: letterCount
+    };
 }
 
-const result = findDuplicates([1, 2, 3, 4, 5, 4, 3, 4]);
+const result = countNumberAndLetters("string152%\\¥");
 console.log(result); 
 
 
