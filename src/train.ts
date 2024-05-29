@@ -546,26 +546,48 @@
 
 // TASK_ZR
 
-function countNumberAndLetters(input: string): { number: number, letter: number } {
-    let numberCount = 0;
-    let letterCount = 0;
+// function countNumberAndLetters(input: string): { number: number, letter: number } {
+//     let numberCount = 0;
+//     let letterCount = 0;
 
-    for (const char of input) {
-        if (/[0-9]/.test(char)) {
-            numberCount++;
-        } else if (/[a-zA-Z]/.test(char)) {
-            letterCount++;
+//     for (const char of input) {
+//         if (/[0-9]/.test(char)) {
+//             numberCount++;
+//         } else if (/[a-zA-Z]/.test(char)) {
+//             letterCount++;
+//         }
+//     }
+
+//     return {
+//         number: numberCount,
+//         letter: letterCount
+//     };
+// }
+
+// const result = countNumberAndLetters("string152%\\¥");
+// console.log(result); 
+
+// TASK_ZS
+
+function singleNumber(nums: number[]): number | undefined {
+    const countMap = new Map<number, number>();
+
+    for (const num of nums) {
+        countMap.set(num, (countMap.get(num) || 0) + 1);
+    }
+
+    for (const [num, count] of countMap.entries()) {
+        if (count === 1) {
+            return num;
         }
     }
 
-    return {
-        number: numberCount,
-        letter: letterCount
-    };
+    return undefined; 
 }
 
-const result = countNumberAndLetters("string152%\\¥");
+const result = singleNumber([4, 2, 1, 2, 1]);
 console.log(result); 
+
 
 
 
