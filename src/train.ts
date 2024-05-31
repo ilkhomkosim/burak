@@ -569,24 +569,46 @@
 
 // TASK_ZS
 
-function singleNumber(nums: number[]): number | undefined {
-    const countMap = new Map<number, number>();
+// function singleNumber(nums: number[]): number | undefined {
+//     const countMap = new Map<number, number>();
 
-    for (const num of nums) {
-        countMap.set(num, (countMap.get(num) || 0) + 1);
+//     for (const num of nums) {
+//         countMap.set(num, (countMap.get(num) || 0) + 1);
+//     }
+
+//     for (const [num, count] of countMap.entries()) {
+//         if (count === 1) {
+//             return num;
+//         }
+//     }
+
+//     return undefined; 
+// }
+
+// const result = singleNumber([4, 2, 1, 2, 1]);
+// console.log(result); 
+
+// TASK_ZT
+
+function firstUniqueCharIndex(s: string): number {
+    const charCount: { [key: string]: number } = {};
+
+    for (const char of s) {
+        charCount[char] = (charCount[char] || 0) + 1;
     }
 
-    for (const [num, count] of countMap.entries()) {
-        if (count === 1) {
-            return num;
+    for (let i = 0; i < s.length; i++) {
+        if (charCount[s[i]] === 1) {
+            return i;
         }
     }
 
-    return undefined; 
+    return -1;
 }
 
-const result = singleNumber([4, 2, 1, 2, 1]);
+const result = firstUniqueCharIndex("stamp");
 console.log(result); 
+
 
 
 
