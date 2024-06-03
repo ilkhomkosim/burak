@@ -590,25 +590,46 @@
 
 // TASK_ZT
 
-function firstUniqueCharIndex(s: string): number {
-    const charCount: { [key: string]: number } = {};
+// function firstUniqueCharIndex(s: string): number {
+//     const charCount: { [key: string]: number } = {};
 
-    for (const char of s) {
-        charCount[char] = (charCount[char] || 0) + 1;
+//     for (const char of s) {
+//         charCount[char] = (charCount[char] || 0) + 1;
+//     }
+
+//     for (let i = 0; i < s.length; i++) {
+//         if (charCount[s[i]] === 1) {
+//             return i;
+//         }
+//     }
+
+//     return -1;
+// }
+
+// const result = firstUniqueCharIndex("stamp");
+// console.log(result); 
+
+// TASK_ZU
+
+function sumOfUnique(numbers: number[]): number {
+    const numberCount: { [key: number]: number } = {};
+
+    for (const number of numbers) {
+        numberCount[number] = (numberCount[number] || 0) + 1;
     }
 
-    for (let i = 0; i < s.length; i++) {
-        if (charCount[s[i]] === 1) {
-            return i;
+    let sum = 0;
+    for (const number in numberCount) {
+        if (numberCount[number] === 1) {
+            sum += parseInt(number);
         }
     }
 
-    return -1;
+    return sum;
 }
 
-const result = firstUniqueCharIndex("stamp");
+const result = sumOfUnique([1, 2, 3, 2]);
 console.log(result); 
-
 
 
 
